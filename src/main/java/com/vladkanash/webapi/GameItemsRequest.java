@@ -1,6 +1,6 @@
 package com.vladkanash.webapi;
 
-import com.vladkanash.config.ApiConfig;
+import com.vladkanash.config.ApiProperties;
 import com.vladkanash.service.WebService;
 import org.apache.commons.lang3.Validate;
 
@@ -10,15 +10,15 @@ import org.apache.commons.lang3.Validate;
 
 public class GameItemsRequest extends ApiRequest {
 
-    GameItemsRequest(ApiConfig apiConfig, WebService webService) {
-        super(apiConfig.getGameItems().getUrl(), apiConfig, webService);
+    GameItemsRequest(ApiProperties apiProperties, WebService webService) {
+        super(apiProperties.getGameItems().getUrl(), apiProperties, webService);
     }
 
     public GameItemsRequest language(final String language) {
         Validate.notBlank(language);
 
         this.queryParams.put(
-                this.apiConfig.getGameItems().getLanguageParam(), language);
+                this.apiProperties.getGameItems().getLanguageParam(), language);
         return this;
     }
 }

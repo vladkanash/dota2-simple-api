@@ -22,7 +22,7 @@ buildscript {
 }
 
 jar {
-    baseName = 'rds-core'
+    baseName = 'rds-api'
     version =  '0.1.0'
 }
 

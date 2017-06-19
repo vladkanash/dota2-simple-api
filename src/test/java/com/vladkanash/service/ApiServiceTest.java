@@ -3,7 +3,8 @@ package com.vladkanash.service;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.vladkanash.config.Application;
+import com.vladkanash.config.ApiConfig;
+import com.vladkanash.config.ApiProperties;
 import com.vladkanash.dto.json.MatchSummary;
 import com.vladkanash.webapi.ApiService;
 import org.json.JSONArray;
@@ -21,7 +22,7 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {Application.class})
+@SpringBootTest(classes = {ApiConfig.class})
 public class ApiServiceTest {
 
     @Autowired

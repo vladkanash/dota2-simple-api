@@ -1,6 +1,6 @@
 package com.vladkanash.webapi;
 
-import com.vladkanash.config.ApiConfig;
+import com.vladkanash.config.ApiProperties;
 import com.vladkanash.service.WebService;
 
 /**
@@ -9,9 +9,9 @@ import com.vladkanash.service.WebService;
 
 public class MatchDetailsRequest extends ApiRequest{
 
-    MatchDetailsRequest(final ApiConfig apiConfig, final long matchId, WebService webService) {
-        super(apiConfig.getMatchDetails().getUrl(), apiConfig, webService);
+    MatchDetailsRequest(final ApiProperties apiProperties, final long matchId, WebService webService) {
+        super(apiProperties.getMatchDetails().getUrl(), apiProperties, webService);
 
-        this.queryParams.put(apiConfig.getMatchDetails().getMatchIdParam(), matchId);
+        this.queryParams.put(apiProperties.getMatchDetails().getMatchIdParam(), matchId);
     }
 }

@@ -1,6 +1,6 @@
 package com.vladkanash.webapi;
 
-import com.vladkanash.config.ApiConfig;
+import com.vladkanash.config.ApiProperties;
 import com.vladkanash.service.WebService;
 import org.apache.commons.lang3.Validate;
 
@@ -10,11 +10,11 @@ import org.apache.commons.lang3.Validate;
 
 public class MatchHistoryRequest extends ApiRequest {
 
-    private final ApiConfig.MatchHistory config;
+    private final ApiProperties.MatchHistory config;
 
-    MatchHistoryRequest(ApiConfig apiConfig, WebService webService) {
-        super(apiConfig.getMatchHistory().getUrl(), apiConfig, webService);
-        this.config = apiConfig.getMatchHistory();
+    MatchHistoryRequest(ApiProperties apiProperties, WebService webService) {
+        super(apiProperties.getMatchHistory().getUrl(), apiProperties, webService);
+        this.config = apiProperties.getMatchHistory();
     }
 
     public MatchHistoryRequest heroId(final long heroId) {
