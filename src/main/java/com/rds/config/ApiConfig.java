@@ -1,4 +1,4 @@
-package com.vladkanash.config;
+package com.rds.config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan(basePackages = {"com.vladkanash"})
+@ComponentScan(basePackages = {"com.rds"})
 @EnableAutoConfiguration
 public class ApiConfig {
 }

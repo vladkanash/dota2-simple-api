@@ -1,4 +1,4 @@
-package com.vladkanash.service;
+package com.rds.service;
 
 import org.apache.http.HttpException;
 import org.json.JSONObject;

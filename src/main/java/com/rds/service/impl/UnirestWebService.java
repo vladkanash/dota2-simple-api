@@ -1,10 +1,10 @@
-package com.vladkanash.service.impl;
+package com.rds.service.impl;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.vladkanash.service.WebService;
+import com.rds.service.WebService;
 import org.apache.http.HttpException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;

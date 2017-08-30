@@ -1,7 +1,7 @@
-package com.vladkanash.webapi;
+package com.rds.webapi;
 
-import com.vladkanash.config.ApiProperties;
-import com.vladkanash.service.WebService;
+import com.rds.config.ApiProperties;
+import com.rds.service.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

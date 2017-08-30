@@ -1,13 +1,7 @@
-package com.vladkanash.service;
+package com.rds.converter;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.vladkanash.config.ApiConfig;
-import com.vladkanash.config.ApiProperties;
-import com.vladkanash.dto.json.MatchSummary;
-import com.vladkanash.webapi.ApiService;
-import org.json.JSONArray;
+import com.rds.config.ApiConfig;
+import com.rds.webapi.ApiService;
 import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,7 +37,7 @@ public class ApiServiceTest {
     @Test
     public void getMatchHistoryMatchesCountTest() throws Exception {
         final JSONObject result = apiService.matchHistory()
-                .matchesRequested("4").get();
+                .matchesRequested(4).get();
 
         assertNotNull(result);
         assertEquals(4, result
@@ -55,7 +49,7 @@ public class ApiServiceTest {
     @Test
     public void getMatchDetailsTest() throws Exception {
         final Long matchId = apiService.matchHistory()
-                .matchesRequested("1")
+                .matchesRequested(1)
                 .get()
                 .getJSONObject("result")
                 .getJSONArray("matches")
@@ -66,18 +60,4 @@ public class ApiServiceTest {
         assertNotNull(result);
         assertEquals((long) matchId, result.getJSONObject("result").getLong("match_id"));
     }
-
-    @Test
-    public void gsonTest() throws Exception {
-        final JSONArray matchHistory = apiService.matchHistory()
-                .get()
-                .getJSONObject("result")
-                .getJSONArray("matches");
-
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .create();
-        final MatchSummary[] summary = gson.fromJson(matchHistory.toString(), MatchSummary[].class);
-    }
-
 }

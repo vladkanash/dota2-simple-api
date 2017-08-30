@@ -1,4 +1,4 @@
-package com.vladkanash.dto.json;
+package com.rds.dto.json;
 
 /**
  * Created by vladk on 17.06.2017.

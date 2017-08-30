@@ -1,7 +1,7 @@
-package com.vladkanash.webapi;
+package com.rds.webapi;
 
-import com.vladkanash.config.ApiProperties;
-import com.vladkanash.service.WebService;
+import com.rds.config.ApiProperties;
+import com.rds.service.WebService;
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -61,8 +61,8 @@ public class MatchHistoryRequest extends ApiRequest {
         return this;
     }
 
-    public MatchHistoryRequest matchesRequested(final String matchesRequested) {
-        Validate.notBlank(matchesRequested);
+    public MatchHistoryRequest matchesRequested(final int matchesRequested) {
+        Validate.isTrue(matchesRequested > 0);
         this.queryParams.put(config.getMatchesRequestedParam(), matchesRequested);
         return this;
     }
