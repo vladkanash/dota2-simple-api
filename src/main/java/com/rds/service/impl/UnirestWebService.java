@@ -27,7 +27,7 @@ public class UnirestWebService implements WebService {
                     .asJson();
             if (result.getBody() == null) throw new HttpException("Response body is null!, url=" + url);
         } catch (UnirestException e) {
-            throw new HttpException("An error occured while trying to process request to " + url, e);
+            throw new HttpException("An error occurred while trying to process request to " + url, e);
         }
 
         return result.getBody().getObject();
