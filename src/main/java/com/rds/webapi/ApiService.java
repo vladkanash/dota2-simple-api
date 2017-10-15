@@ -32,4 +32,6 @@ public class ApiService {
     public GameItemsRequest gameItems() {
         return new GameItemsRequest(apiProperties, webService);
     }
+
+    public GameHeroesRequest gameHeroes() {return new GameHeroesRequest(apiProperties, webService);}
 }

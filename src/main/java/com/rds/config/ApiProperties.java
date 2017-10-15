@@ -23,6 +23,7 @@ public class ApiProperties {
     private final MatchHistory matchHistory = new MatchHistory();
     private final MatchDetails matchDetails = new MatchDetails();
     private final GameItems gameItems = new GameItems();
+    private final GameHeroes gameHeroes = new GameHeroes();
 
     public String getKey() {
         return key;
@@ -51,6 +52,8 @@ public class ApiProperties {
     public GameItems getGameItems() {
         return gameItems;
     }
+
+    public GameHeroes getGameHeroes() {return gameHeroes;}
 
     public static class MatchHistory {
 
@@ -187,6 +190,37 @@ public class ApiProperties {
 
         public void setLanguageParam(String languageParam) {
             this.languageParam = languageParam;
+        }
+    }
+
+    public static class GameHeroes {
+
+        private String url;
+        private String languageParam;
+        private String itemizedParam;
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getLanguageParam() {
+            return languageParam;
+        }
+
+        public void setLanguageParam(String languageParam) {
+            this.languageParam = languageParam;
+        }
+
+        public String getItemizedParam() {
+            return itemizedParam;
+        }
+
+        public void setItemizedParam(String itemizedParam) {
+            this.itemizedParam = itemizedParam;
         }
     }
 }

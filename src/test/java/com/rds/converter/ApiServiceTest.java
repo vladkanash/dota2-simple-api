@@ -29,6 +29,12 @@ public class ApiServiceTest {
     }
 
     @Test
+    public void getGameHeroesTest() throws Exception {
+        final JSONObject result = apiService.gameHeroes().itemizedOnly(true).get();
+        assertNotNull(result);
+    }
+
+    @Test
     public void getMatchHistoryTest() throws Exception {
         final JSONObject result = apiService.matchHistory().get();
         assertNotNull(result);
