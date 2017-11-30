@@ -1,4 +1,4 @@
-package com.rds.service;
+package com.dota2.service;
 
 import org.apache.http.HttpException;
 import org.json.JSONObject;

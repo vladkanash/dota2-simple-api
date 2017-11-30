@@ -1,4 +1,4 @@
-package com.rds.config;
+package com.dota2.config;
 
 /**
  * Created by vladk on 17.06.2017.

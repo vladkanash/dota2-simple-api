@@ -1,7 +1,7 @@
-package com.rds.webapi;
+package com.dota2.webapi;
 
-import com.rds.config.ApiProperties;
-import com.rds.service.WebService;
+import com.dota2.config.ApiProperties;
+import com.dota2.service.WebService;
 
 /**
  * Created by vladk on 17.06.2017.

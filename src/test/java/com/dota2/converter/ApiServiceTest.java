@@ -1,6 +1,6 @@
-package com.rds.converter;
+package com.dota2.converter;
 
-import com.rds.webapi.ApiService;
+import com.dota2.webapi.ApiService;
 import org.json.JSONObject;
 import org.junit.Test;
 

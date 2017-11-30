@@ -1,10 +1,10 @@
-package com.rds.service.impl;
+package com.dota2.service.impl;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.rds.service.WebService;
+import com.dota2.service.WebService;
 import org.apache.http.HttpException;
 import org.json.JSONObject;
 

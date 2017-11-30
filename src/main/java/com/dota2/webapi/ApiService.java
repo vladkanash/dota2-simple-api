@@ -1,10 +1,10 @@
-package com.rds.webapi;
+package com.dota2.webapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.rds.config.*;
-import com.rds.service.WebService;
-import com.rds.service.impl.UnirestWebService;
+import com.dota2.config.*;
+import com.dota2.service.WebService;
+import com.dota2.service.impl.UnirestWebService;
 
 import java.io.IOException;
 import java.net.URL;
