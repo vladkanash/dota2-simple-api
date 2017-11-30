@@ -3,7 +3,6 @@ package com.rds.webapi;
 import com.rds.config.ApiProperties;
 import com.rds.service.WebService;
 import org.apache.http.HttpException;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -24,7 +23,7 @@ public class ApiRequest {
         this.url = url;
         this.apiProperties = apiProperties;
         this.webService = webService;
-        this.queryParams.put(apiProperties.getKeyParam(), apiProperties.getKey());
+        this.queryParams.put(apiProperties.getApiKeyParam(), apiProperties.getApiKey());
     }
 
     public JSONObject get() {

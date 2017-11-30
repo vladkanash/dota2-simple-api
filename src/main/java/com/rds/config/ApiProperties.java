@@ -1,44 +1,34 @@
 package com.rds.config;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-
 /**
  * Created by vladk on 17.06.2017.
  */
 
-@Configuration
-@PropertySource("classpath:config/dota2api.properties")
-@ConfigurationProperties(prefix="dota2.api")
 public class ApiProperties {
 
-    @NotBlank
-    private String key;
+    private String apiKey;
 
-    @NotBlank
-    private String keyParam;
+    private String apiKeyParam;
 
     private final MatchHistory matchHistory = new MatchHistory();
     private final MatchDetails matchDetails = new MatchDetails();
     private final GameItems gameItems = new GameItems();
     private final GameHeroes gameHeroes = new GameHeroes();
 
-    public String getKey() {
-        return key;
+    public String getApiKey() {
+        return apiKey;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 
-    public String getKeyParam() {
-        return keyParam;
+    public String getApiKeyParam() {
+        return apiKeyParam;
     }
 
-    public void setKeyParam(String keyParam) {
-        this.keyParam = keyParam;
+    public void setApiKeyParam(String apiKeyParam) {
+        this.apiKeyParam = apiKeyParam;
     }
 
     public MatchHistory getMatchHistory() {

@@ -3,7 +3,6 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -16,9 +15,6 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
-    }
 }
 
 jar {
@@ -27,11 +23,10 @@ jar {
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-test")
     compile("com.mashape.unirest:unirest-java:1.4.9")
     compile('org.apache.commons:commons-lang3:3.0')
+    compile("com.fasterxml.jackson.core:jackson-databind:2.9.2")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.2")
 
     testCompile 'junit:junit:4.12'
 }

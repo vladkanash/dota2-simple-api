@@ -7,7 +7,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.rds.service.WebService;
 import org.apache.http.HttpException;
 import org.json.JSONObject;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -15,7 +14,6 @@ import java.util.Map;
  * Created by vladk on 17.06.2017.
  */
 
-@Service
 public class UnirestWebService implements WebService {
 
     @Override

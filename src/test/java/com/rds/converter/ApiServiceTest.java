@@ -1,13 +1,8 @@
 package com.rds.converter;
 
-import com.rds.config.ApiConfig;
 import com.rds.webapi.ApiService;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
@@ -15,12 +10,9 @@ import static org.junit.Assert.*;
  * Created by vladk on 16.06.2017.
  */
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = {ApiConfig.class})
 public class ApiServiceTest {
 
-    @Autowired
-    private ApiService apiService;
+    private ApiService apiService = new ApiService("47739846B894FDBB8448CD2685BF9DDE");
 
     @Test
     public void getGameItemsTest() throws Exception {

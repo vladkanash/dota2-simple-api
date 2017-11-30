@@ -1,0 +1,27 @@
+#api
+apiKeyParam: key
+
+gameHeroes:
+    itemizedParam: itemizedonly
+    languageParam: language
+    url: https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/
+
+gameItems:
+    languageParam: language
+    url: https://api.steampowered.com/IEconDOTA2_570/GetGameItems/v1/
+
+matchDetails:
+    matchIdParam: match_id
+    url: https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/
+
+matchHistory:
+    accountIdParam: account_id
+    gameModeParam: game_mode
+    heroIdParam: hero_id
+    leagueIdParam: league_id
+    matchesRequestedParam: matches_requested
+    minPlayersParam: min_players
+    skillParam: skill
+    startAtMatchIdParam: start_at_match_id
+    tournamentGamesOnlyParam: tournament_games_only
+    url: https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/
