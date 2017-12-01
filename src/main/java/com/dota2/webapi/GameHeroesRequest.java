@@ -2,7 +2,8 @@ package com.dota2.webapi;
 
 import com.dota2.config.ApiProperties;
 import com.dota2.service.WebService;
-import org.apache.commons.lang3.Validate;
+
+import static com.dota2.util.Validation.checkNotNull;
 
 /**
  * Created by vladk on 15.10.2017.
@@ -14,7 +15,7 @@ public class GameHeroesRequest extends ApiRequest {
     }
 
     public GameHeroesRequest language(final String language) {
-        Validate.notBlank(language);
+        checkNotNull(language);
 
         this.queryParams.put(
                 this.apiProperties.getGameItems().getLanguageParam(), language);

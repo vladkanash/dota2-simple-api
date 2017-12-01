@@ -2,7 +2,9 @@ package com.dota2.webapi;
 
 import com.dota2.config.ApiProperties;
 import com.dota2.service.WebService;
-import org.apache.commons.lang3.Validate;
+
+import static com.dota2.util.Validation.checkIsTrue;
+import static com.dota2.util.Validation.checkNotNull;
 
 /**
  * Created by vladk on 17.06.2017.
@@ -18,51 +20,51 @@ public class MatchHistoryRequest extends ApiRequest {
     }
 
     public MatchHistoryRequest heroId(final long heroId) {
-        Validate.isTrue(heroId > 0, "heroId must be positive value");
+        checkIsTrue(heroId > 0, "heroId must be positive value");
         this.queryParams.put(config.getHeroIdParam(), heroId);
         return this;
     }
 
     public MatchHistoryRequest gameMode(final long gameMode) {
-        Validate.isTrue(gameMode >= 0 && gameMode <= 16,
+        checkIsTrue(gameMode >= 0 && gameMode <= 16,
                 "gameMode value is not valid");
         this.queryParams.put(config.getGameModeParam(), gameMode);
         return this;
     }
 
     public MatchHistoryRequest skill(final long skill) {
-        Validate.isTrue(skill >= 0 && skill <= 3,
+        checkIsTrue(skill >= 0 && skill <= 3,
                 "skill value is not valid");
         this.queryParams.put(config.getSkillParam(), skill);
         return this;
     }
 
     public MatchHistoryRequest minPlayers(final String minPlayers) {
-        Validate.notBlank(minPlayers);
+        checkNotNull(minPlayers);
         this.queryParams.put(config.getMinPlayersParam(), minPlayers);
         return this;
     }
 
     public MatchHistoryRequest accountId(final String accountId) {
-        Validate.notBlank(accountId);
+        checkNotNull(accountId);
         this.queryParams.put(config.getAccountIdParam(), accountId);
         return this;
     }
 
     public MatchHistoryRequest leagueId(final String leagueId) {
-        Validate.notBlank(leagueId);
+        checkNotNull(leagueId);
         this.queryParams.put(config.getLeagueIdParam(), leagueId);
         return this;
     }
 
     public MatchHistoryRequest startAtMatchId(final String startAtMatchId) {
-        Validate.notBlank(startAtMatchId);
+        checkNotNull(startAtMatchId);
         this.queryParams.put(config.getStartAtMatchIdParam(), startAtMatchId);
         return this;
     }
 
     public MatchHistoryRequest matchesRequested(final int matchesRequested) {
-        Validate.isTrue(matchesRequested > 0);
+        checkIsTrue(matchesRequested > 0, "Matches requested should be a positive value");
         this.queryParams.put(config.getMatchesRequestedParam(), matchesRequested);
         return this;
     }
