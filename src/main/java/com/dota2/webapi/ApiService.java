@@ -56,4 +56,16 @@ public class ApiService {
     public GameHeroesRequest gameHeroes() {
         return new GameHeroesRequest(apiProperties.getGameHeroes(), webService);
     }
+
+    public LeagueListingRequest leagueListing() {
+        return new LeagueListingRequest(apiProperties.getLeagueListing(), webService);
+    }
+
+    public LiveLeagueGamesRequest liveLeagueGames() {
+        return new LiveLeagueGamesRequest(apiProperties.getLiveLeagueGames(), webService);
+    }
+
+    public MatchHistoryBySeqNumRequest matchHistoryBySequenceNum() {
+        return new MatchHistoryBySeqNumRequest(apiProperties.getMatchHistoryBySeqNum(), webService);
+    }
 }

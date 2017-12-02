@@ -8,6 +8,17 @@ gameHeroes:
 gameItems:
     url: https://api.steampowered.com/IEconDOTA2_570/GetGameItems/v1/
 
+leagueListing:
+    url: https://api.steampowered.com/IDOTA2Match_570/GetLeagueListing/v1/
+
+liveLeagueGames:
+    url: https://api.steampowered.com/IDOTA2Match_570/GetLiveLeagueGames/v1/
+
+matchHistoryBySeqNum:
+    url: https://api.steampowered.com/IDOTA2Match_570/GetMatchHistoryBySequenceNum/v1
+    startAtMatchSeqNumParam: start_at_match_seq_num
+    matchesRequestedParam: matches_requested
+
 matchDetails:
     url: https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/
     matchIdParam: match_id

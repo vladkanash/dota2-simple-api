@@ -14,6 +14,9 @@ public class ApiProperties {
     private final MatchDetails matchDetails = new MatchDetails();
     private final GameItems gameItems = new GameItems();
     private final GameHeroes gameHeroes = new GameHeroes();
+    private final LeagueListing leagueListing = new LeagueListing();
+    private final LiveLeagueGames liveLeagueGames = new LiveLeagueGames();
+    private final MatchHistoryBySeqNum matchHistoryBySeqNum = new MatchHistoryBySeqNum();
 
     public String getApiKey() {
         return apiKey;
@@ -44,6 +47,18 @@ public class ApiProperties {
     }
 
     public GameHeroes getGameHeroes() {return gameHeroes;}
+
+    public LeagueListing getLeagueListing() {
+        return leagueListing;
+    }
+
+    public LiveLeagueGames getLiveLeagueGames() {
+        return liveLeagueGames;
+    }
+
+    public MatchHistoryBySeqNum getMatchHistoryBySeqNum() {
+        return matchHistoryBySeqNum;
+    }
 
     public class BaseRequestConfig {
 
@@ -133,6 +148,26 @@ public class ApiProperties {
 
         public String getItemizedOnlyParam() {
             return itemizedOnlyParam;
+        }
+    }
+
+    public class LeagueListing extends BaseRequestConfig {
+    }
+
+    public class LiveLeagueGames extends BaseRequestConfig {
+    }
+
+    public class MatchHistoryBySeqNum extends BaseRequestConfig {
+
+        private String startAtMatchSeqNumParam;
+        private String matchesRequestedParam;
+
+        public String getStartAtMatchSeqNumParam() {
+            return startAtMatchSeqNumParam;
+        }
+
+        public String getMatchesRequestedParam() {
+            return matchesRequestedParam;
         }
     }
 }
