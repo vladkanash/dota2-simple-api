@@ -12,18 +12,18 @@ import java.util.Map;
  * Created by vladk on 17.06.2017.
  */
 
-public class ApiRequest {
+public class ApiRequest<T extends ApiProperties.BaseRequestConfig> {
 
     private final String url;
     private final WebService webService;
-    final Map<String, Object> queryParams = new HashMap<>();
-    final ApiProperties apiProperties;
+    private final Map<String, Object> queryParams = new HashMap<>();
+    private final T requestConfig;
 
-    ApiRequest(final String url, final ApiProperties apiProperties, final WebService webService) {
-        this.url = url;
-        this.apiProperties = apiProperties;
+      ApiRequest(final T requestConfig, final WebService webService) {
+        this.url = requestConfig.getUrl();
         this.webService = webService;
-        this.queryParams.put(apiProperties.getApiKeyParam(), apiProperties.getApiKey());
+        this.queryParams.put(requestConfig.getApiKeyParam(), requestConfig.getApiKey());
+        this.requestConfig = requestConfig;
     }
 
     public JSONObject get() {
@@ -34,5 +34,13 @@ public class ApiRequest {
             e.printStackTrace();
         }
         return result;
+    }
+
+    T getRequestConfig() {
+        return this.requestConfig;
+    }
+
+    Map<String, Object> getQueryParams() {
+        return this.queryParams;
     }
 }

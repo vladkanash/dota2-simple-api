@@ -7,11 +7,11 @@ import com.dota2.service.WebService;
  * Created by vladk on 17.06.2017.
  */
 
-public class MatchDetailsRequest extends ApiRequest{
+public class MatchDetailsRequest extends ApiRequest<ApiProperties.MatchDetails>{
 
-    MatchDetailsRequest(final ApiProperties apiProperties, final long matchId, WebService webService) {
-        super(apiProperties.getMatchDetails().getUrl(), apiProperties, webService);
+    MatchDetailsRequest(ApiProperties.MatchDetails requestConfig, WebService webService, final Long matchId) {
+        super(requestConfig, webService);
 
-        this.queryParams.put(apiProperties.getMatchDetails().getMatchIdParam(), matchId);
+        getQueryParams().put(getRequestConfig().getMatchIdParam(), matchId);
     }
 }

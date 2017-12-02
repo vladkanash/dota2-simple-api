@@ -10,67 +10,64 @@ import static com.dota2.util.Validation.checkNotNull;
  * Created by vladk on 17.06.2017.
  */
 
-public class MatchHistoryRequest extends ApiRequest {
+public class MatchHistoryRequest extends ApiRequest<ApiProperties.MatchHistory> {
 
-    private final ApiProperties.MatchHistory config;
-
-    MatchHistoryRequest(ApiProperties apiProperties, WebService webService) {
-        super(apiProperties.getMatchHistory().getUrl(), apiProperties, webService);
-        this.config = apiProperties.getMatchHistory();
+    MatchHistoryRequest(ApiProperties.MatchHistory requestConfig, WebService webService) {
+        super(requestConfig, webService);
     }
 
     public MatchHistoryRequest heroId(final long heroId) {
         checkIsTrue(heroId > 0, "heroId must be positive value");
-        this.queryParams.put(config.getHeroIdParam(), heroId);
+        getQueryParams().put(getRequestConfig().getHeroIdParam(), heroId);
         return this;
     }
 
     public MatchHistoryRequest gameMode(final long gameMode) {
         checkIsTrue(gameMode >= 0 && gameMode <= 16,
                 "gameMode value is not valid");
-        this.queryParams.put(config.getGameModeParam(), gameMode);
+        getQueryParams().put(getRequestConfig().getGameModeParam(), gameMode);
         return this;
     }
 
     public MatchHistoryRequest skill(final long skill) {
         checkIsTrue(skill >= 0 && skill <= 3,
                 "skill value is not valid");
-        this.queryParams.put(config.getSkillParam(), skill);
+        getQueryParams().put(getRequestConfig().getSkillParam(), skill);
         return this;
     }
 
     public MatchHistoryRequest minPlayers(final String minPlayers) {
         checkNotNull(minPlayers);
-        this.queryParams.put(config.getMinPlayersParam(), minPlayers);
+        getQueryParams().put(getRequestConfig().getMinPlayersParam(), minPlayers);
         return this;
     }
 
     public MatchHistoryRequest accountId(final String accountId) {
         checkNotNull(accountId);
-        this.queryParams.put(config.getAccountIdParam(), accountId);
+        getQueryParams().put(getRequestConfig().getAccountIdParam(), accountId);
         return this;
     }
 
     public MatchHistoryRequest leagueId(final String leagueId) {
         checkNotNull(leagueId);
-        this.queryParams.put(config.getLeagueIdParam(), leagueId);
+        getQueryParams().put(getRequestConfig().getLeagueIdParam(), leagueId);
         return this;
     }
 
     public MatchHistoryRequest startAtMatchId(final String startAtMatchId) {
         checkNotNull(startAtMatchId);
-        this.queryParams.put(config.getStartAtMatchIdParam(), startAtMatchId);
+        getQueryParams().put(getRequestConfig().getStartAtMatchIdParam(), startAtMatchId);
         return this;
     }
 
     public MatchHistoryRequest matchesRequested(final int matchesRequested) {
         checkIsTrue(matchesRequested > 0, "Matches requested should be a positive value");
-        this.queryParams.put(config.getMatchesRequestedParam(), matchesRequested);
+        getQueryParams().put(getRequestConfig().getMatchesRequestedParam(), matchesRequested);
         return this;
     }
 
     public MatchHistoryRequest tournamentGamesOnly(final boolean tournamentGamesOnly) {
-        this.queryParams.put(config.getMatchesRequestedParam(),
+        getQueryParams().put(getRequestConfig().getMatchesRequestedParam(),
                 tournamentGamesOnly ? "1" : "0");
         return this;
     }

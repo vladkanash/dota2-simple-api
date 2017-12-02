@@ -2,7 +2,7 @@ package com.dota2.webapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.dota2.config.*;
+import com.dota2.config.ApiProperties;
 import com.dota2.service.WebService;
 import com.dota2.service.impl.UnirestWebService;
 
@@ -42,16 +42,18 @@ public class ApiService {
     }
 
     public MatchHistoryRequest matchHistory() {
-        return new MatchHistoryRequest(apiProperties, webService);
+        return new MatchHistoryRequest(apiProperties.getMatchHistory(), webService);
     }
 
     public MatchDetailsRequest matchDetails(final long matchId) {
-        return new MatchDetailsRequest(apiProperties, matchId, webService);
+        return new MatchDetailsRequest(apiProperties.getMatchDetails(), webService, matchId);
     }
 
     public GameItemsRequest gameItems() {
-        return new GameItemsRequest(apiProperties, webService);
+        return new GameItemsRequest(apiProperties.getGameItems(), webService);
     }
 
-    public GameHeroesRequest gameHeroes() {return new GameHeroesRequest(apiProperties, webService);}
+    public GameHeroesRequest gameHeroes() {
+        return new GameHeroesRequest(apiProperties.getGameHeroes(), webService);
+    }
 }
